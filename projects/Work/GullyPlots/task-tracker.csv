@@ -1,0 +1,6 @@
+Task ID,Related Feature ID,Task,Type,Status,Owner,ETA,Actual completion,Dependency,Notes
+T001,GOV,Initialize Project Infrastructure,DevOps,Implemented,Antigravity,2026-03-11,2026-03-11,None,Structure & Docker standardized. Base Makefile ready.
+T002,GOV,Sync Project Documentation,Doc,Not Started,Antigravity,2026-03-11,,None,Run /standardize-docs
+T003,GOV,Setup CI/CD Pipeline,DevOps,Not Started,Antigravity,2026-03-11,,None,Run /setup-cicd
+T004,GOV,Project Enhancement Roadmap,Research,Implemented,Antigravity,2026-03-11,,None,Initial Roadmap generation
+

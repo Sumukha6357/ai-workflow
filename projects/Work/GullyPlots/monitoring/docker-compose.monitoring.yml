@@ -1,0 +1,60 @@
+services:
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: ${PROJECT_NAME:-app}-prometheus
+    volumes:
+      - ./monitoring/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+    ports:
+      - "9090:9090"
+    networks:
+      - app-network
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: ${PROJECT_NAME:-app}-grafana
+    volumes:
+      - ./monitoring/grafana/provisioning:/etc/grafana/provisioning
+      - grafana_data:/var/lib/grafana
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD:-admin}
+      - GF_USERS_ALLOW_SIGN_UP=false
+    ports:
+      - "3001:3000"
+    networks:
+      - app-network
+
+  loki:
+    image: grafana/loki:latest
+    container_name: ${PROJECT_NAME:-app}-loki
+    volumes:
+      - ./monitoring/loki/loki-config.yml:/etc/loki/local-config.yaml
+    command: -config.file=/etc/loki/local-config.yaml
+    ports:
+      - "3100:3100"
+    networks:
+      - app-network
+
+  promtail:
+    image: grafana/promtail:latest
+    container_name: ${PROJECT_NAME:-app}-promtail
+    volumes:
+      - /var/log:/var/log
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - ./monitoring/loki/promtail-config.yml:/etc/promtail/config.yml
+    command: -config.file=/etc/promtail/config.yml
+    networks:
+      - app-network
+
+volumes:
+  prometheus_data:
+  grafana_data:
+
+
+networks:
+  app-network:
+    external: true
+    name: ${DOCKER_NETWORK:-app-network}

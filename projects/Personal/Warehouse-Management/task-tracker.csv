@@ -1,0 +1,7 @@
+Task ID,Related Feature ID,Task,Type,Status,Owner,ETA,Actual completion,Dependency,Notes
+WM-TASK-001,WM-FEAT-001,Create Docker Compose,DevOps,Done,SumukhaKY,2026-03-05,2026-03-09,,Full-stack dev-ready.
+WM-TASK-002,WM-FEAT-002,Table Schema - Inventory,DB,Done,SumukhaKY,2026-03-05,2026-03-09,,Postgres migrations active.
+WM-TASK-003,WM-FEAT-003,Configure OIDC Auth,API,In Progress,SumukhaKY,2026-03-12,,,Hooking up Spring Security.
+WM-TASK-004,WM-FEAT-003,Method Level Security,API,Not Started,SumukhaKY,2026-03-13,,,Requires Auth module completion.
+WM-TASK-005,WM-FEAT-005,Next.js Inventory Grid,UI,In Progress,SumukhaKY,2026-03-12,,,Using Tailwind 4 components.
+WM-TASK-006,WM-FEAT-004,STOMP Broker Config,DevOps,Not Started,SumukhaKY,2026-03-15,,,Part of real-time telemetrics.

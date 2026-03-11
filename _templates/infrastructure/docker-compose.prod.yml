@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  api:
+    container_name: ${PROJECT_NAME:-app}-api-prod
+    environment:
+      - NODE_ENV=production
+      - SPRING_PROFILES_ACTIVE=prod
+    restart: always
+
+  web:
+    container_name: ${PROJECT_NAME:-app}-web-prod
+    environment:
+      - NODE_ENV=production
+    restart: always

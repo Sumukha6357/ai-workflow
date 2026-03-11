@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  api:
+    container_name: ${PROJECT_NAME:-app}-api-local
+    environment:
+      - NODE_ENV=local
+
+  web:
+    container_name: ${PROJECT_NAME:-app}-web-local
+    environment:
+      - NODE_ENV=local

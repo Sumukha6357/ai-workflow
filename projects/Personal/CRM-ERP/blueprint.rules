@@ -1,0 +1,21 @@
+# 📐 Project Blueprint & Architectural Constraints: [PROJECT_NAME]
+
+## 🛠️ Mandatory Tech Stack
+- **Runtime**: [e.g., Java 17, Node 24]
+- **Frontend**: [e.g., Next.js 16, Tailwind 4]
+- **Backend**: [e.g., Spring Boot 3.4.6]
+- **Database**: [e.g., PostgreSQL 16]
+
+## 🏗️ Infrastructure Constraints
+- **Docker Required**: [YES/NO]
+- **Orchestration**: [e.g., Docker Compose]
+- **CI/CD Pipeline**: [e.g., GitHub Actions]
+- **Cloud Provider**: [e.g., AWS, Local Only]
+
+## 🔒 Architectural Guardrails
+- **Pattern**: [e.g., Monorepo, Microservices, Layered]
+- **Security**: [e.g., JWT, OIDC, RBAC]
+- **Forbidden**: [e.g., No Inline CSS, No Plain SQL, No Public S3 Buckets]
+
+## 🚦 Compliance Check
+Every AI action must verify against this blueprint. If a proposed change violates a constraint (e.g., adding a library not in the approved stack), it must be flagged as a **BLOCKER**.

@@ -1,0 +1,20 @@
+# 📐 Project Blueprint & Architectural Constraints: GGIPL
+
+## 🛠️ Mandatory Tech Stack
+- **Runtime**: [LOCKED - Enterprise Standard]
+- **Frontend**: [Enterprise Standard Hooks]
+- **Backend**: [Protected Java Ecosystem]
+- **Database**: PostgreSQL 16 (Managed AWS / On-Prem)
+
+## 🏗️ Infrastructure Constraints
+- **Docker Required**: YES (Global Enterprise Requirement)
+- **CI/CD Pipeline**: Jenkins / GitLab Runner ONLY.
+- **Environment**: Staged Production (No public cloud direct access).
+
+## 🔒 Architectural Guardrails
+- **Pattern**: Domain-Driven Design (DDD).
+- **Security**: OAuth2 + Private OIDC Provider.
+- **Forbidden**: No external libraries allowed without Legal/Security audit. No local `java` execution allowed outside of Docker containers.
+
+## 🚦 Compliance Check
+AI Agent is in **🔴 PROTECTED** mode. Every change request is a manual operation and must verify that the code stays within this enterprise-tier blueprint.

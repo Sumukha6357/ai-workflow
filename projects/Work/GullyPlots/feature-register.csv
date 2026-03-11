@@ -1,0 +1,8 @@
+Feature ID,Module,Feature name,Description,Status,Priority,Assigned to,Started date,Completed date,Notes
+F001,Auth,Authentication & Authorization,User login, registration, and JWT-based security.,Implemented,High,Sumukha,,
+F002,Projects,Project Management,Creation and management of real estate projects/land parcels.,Implemented,High,Sumukha,,
+F003,Plots,Plot Inventory,Management of individual plots within projects including pricing and status.,Implemented,High,Sumukha,,
+F004,Requirements,Requirement Tracking,Capturing buyer and builder specific plots needs.,Implemented,Medium,Sumukha,,
+F005,Matching,Plot Matching Engine,Algorithmic matching of plot requirements with available inventory.,Implemented,High,Sumukha,,
+F006,Bookmarks,User Bookmarks,Allowing users to save and track preferred plots.,Implemented,Low,Sumukha,,
+F007,Admin,Admin Dashboard,Centralized management for system configuration and user audits.,Implemented,Medium,Sumukha,,

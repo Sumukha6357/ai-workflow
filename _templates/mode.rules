@@ -1,0 +1,30 @@
+# 🛡️ Governance Locking System: [PROJECT_NAME]
+# Global Governance ID: [GENERATE_ID]
+
+## 🚦 Active Security Lock Level
+# Change this single variable to restrict the AI's capabilities across the entire project.
+LOCK_LEVEL=1
+
+---
+
+### [LEVEL 0] 🟢 EXPERIMENTAL (Fully Unlocked)
+# Use for: Local sandboxes, scratchpads, initial prototyping.
+# AI Behavior: Agent is allowed to refactor, install dependencies, change architecture, and add value autonomously.
+
+### [LEVEL 1] 🟡 DEVELOPMENT (Partial Lock - DEFAULT)
+# Use for: Standard feature development.
+# AI Behavior: Agent can write and add features autonomously but CANNOT modify `pom.xml`, `docker-compose.yml`, Database Schemas, or core architecture without explicit permission.
+
+### [LEVEL 2] 🔴 PRODUCTION-LOCKED (Total Restraint)
+# Use for: Live deployments, critical systems, or when debugging a fragile issue.
+# AI Behavior: Agent does exactly the feature or fix requested and strictly nothing more. ZERO unsolicited value-adding, refactoring, or formatting fixes in unrelated files. 
+# Pre-Flight Approval MANDATORY: You MUST propose your exact plan in the chat (listing what files will be changed, like `docker-compose.yml` or `pom.xml`) and explicitly wait for the user to say "Go ahead" or "Proceed" BEFORE you write the code or modify the files. The user must be able to verify your approach before you execute.
+# Explicit Instruction Override: If the user requests a feature that logically requires infrastructure/architecture changes (e.g., adding a Redis service, a new dependency, or a database table), the agent IS allowed to modify `docker-compose.yml`, `pom.xml`, etc., *only* to implement that explicit request, BUT ONLY AFTER receiving the Pre-Flight Approval mentioned above.
+
+---
+
+## 🔒 Specific Sub-Locks (Overrides)
+# These rules apply regardless of the Lock Level above.
+ARCHITECTURE_MODIFICATION=LOCKED
+DATABASE_SCHEMA_MODIFICATION=LOCKED
+DEPENDENCY_INSTALLATION=LOCKED

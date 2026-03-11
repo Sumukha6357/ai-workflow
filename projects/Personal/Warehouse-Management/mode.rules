@@ -1,0 +1,15 @@
+# Project: Warehouse-Management
+# Global Governance ID: WM-001
+
+## Current Mode
+MODE=🟡 MANUAL
+
+## Restrictions
+ARCHITECTURE=LOCKED
+INFRASTRUCTURE=LOCKED
+DATABASE=LOCKED
+
+## Special Instructions
+- Never override library versions in `pom.xml` without explicit version verification.
+- Frontend changes must follow the "Tailwind 4" design system exclusively.
+- Always check `/ai-skills/manual_instructions/` for task-specific steps before proposing any change.

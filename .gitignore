@@ -1,0 +1,33 @@
+# Environment & Secrets
+.env
+.env.*
+*.env
+*.pem
+*.key
+*.cert
+secrets/
+credentials/
+
+# OS & Editor artifacts
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node / Python
+node_modules/
+__pycache__/
+*.pyc
+dist/
+build/
+target/
+*.log
+
+# Docker
+.dockerignore
+
+# Antigravity/Agent internals (ephemeral session data)
+.gemini/
+.agents/sessions/

@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  # This file handles the base infrastructure (Images, Networks, etc.)
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    environment:
+      - DB_HOST=db
+      - SSL_MODE=${SSL_MODE:-false}
+      - DATABASE_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}?schema=public&sslmode=${SSL_MODE:-false}
+    networks:
+      - app-network
+
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    networks:
+      - app-network
+
+  db:
+    image: ${DB_IMAGE:-postgres:15-alpine}
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+  migrations:
+    build:
+      context: ./api
+      dockerfile: Dockerfile.migrations
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - SSL_MODE=${SSL_MODE:-false}
+      - DATABASE_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}?schema=public&sslmode=${SSL_MODE:-false}
+    networks:
+      - app-network
+  gateway:
+    image: nginx:alpine
+    ports:
+      - "${PORT:-8080}:80"
+    volumes:
+      - ./infra/gateway/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - api
+      - web
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  db-data:
+    driver: local

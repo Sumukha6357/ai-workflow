@@ -1,0 +1,22 @@
+# Project: GGIPL
+# Global Governance ID: GGIPL-ENT-001
+
+## Current Mode
+MODE=🔴 PROTECTED
+
+## Restrictions
+ARCHITECTURE=LOCKED
+INFRASTRUCTURE=LOCKED
+DATABASE=LOCKED
+SECURITY=LOCKED
+TESTING=LOCKED
+DEPLOYMENT=LOCKED
+CICD=LOCKED
+
+## Special Instructions
+- **HIGHEST RESTRICTION**: This is a professional enterprise entity.
+- NO autonomous changes allowed.
+- NO value-add refactoring allowed.
+- I perform ONLY the exact string/line changes provided in the chat.
+- Every single modification MUST be preceded by a manual instruction walkthrough in `manual_instructions/`.
+- Proactively check `permissions.md` before even reading files.

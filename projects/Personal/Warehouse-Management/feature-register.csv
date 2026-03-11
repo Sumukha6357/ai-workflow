@@ -1,0 +1,7 @@
+Feature ID,Module,Feature name,Description,Status,Priority,Assigned to,Started date,Completed date,Notes
+WM-FEAT-001,Infrastructure,Dockerized Setup,Full-stack containerization for local development.,Done,High,SumukhaKY,2026-03-01,2026-03-09,Ready with dev/local profiles.
+WM-FEAT-002,Database,PostgreSQL Schema,Core tables for stock, staff, and shippers.,Done,High,SumukhaKY,2026-03-02,2026-03-09,Full migrations ready.
+WM-FEAT-003,Backend,Spring Security RBAC,JWT and Role-based access control for operations.,In Progress,High,SumukhaKY,2026-03-09,,Requires QA on token refresh.
+WM-FEAT-004,Real-time,WebSocket Telemetrics,Live stock flow updates via STOMP.,Not Started,Critical,SumukhaKY,,,Heart of the logistics ledger.
+WM-FEAT-005,Frontend,Inventory Management UI,Next.js 16 dashboard for stock levels.,In Progress,Medium,SumukhaKY,2026-03-10,,Using Tailwind 4 standard.
+WM-FEAT-006,Operations,Pick & Pack Flow,Order fulfillment logic and task assignment.,Not Started,High,SumukhaKY,,,Crucial for warehouse throughput.

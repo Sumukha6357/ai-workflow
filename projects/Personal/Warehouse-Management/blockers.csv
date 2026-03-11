@@ -1,0 +1,3 @@
+Issue ID,Module,Problem,Severity,Blocked by,Owner,Opened on,Expected resolution,Status
+WM-BLK-001,Auth,OAuth2 Config Mismatch,Critical,Provider API,SumukhaKY,2026-03-09,2026-03-12,Open
+WM-BLK-002,Infrastructure,WebSocket Handshake Failure,High,Network Proxy,SumukhaKY,2026-03-10,2026-03-15,Investigating
