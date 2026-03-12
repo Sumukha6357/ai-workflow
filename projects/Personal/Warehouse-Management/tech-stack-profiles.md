@@ -1,6 +1,6 @@
-# 📐 Project Blueprint & Architectural Constraints: Warehouse-Management
+# 🛠️ Mandatory Tech Stack & Profiles: Warehouse-Management
 
-## 🛠️ Mandatory Tech Stack
+## 🧩 Primary Stack
 - **Runtime**: Java 17, Node 24
 - **Frontend**: Next.js 16 (App Router), Tailwind 4
 - **Backend**: Spring Boot 3.4.6 (LTS)
@@ -8,15 +8,11 @@
 
 ## 🏗️ Infrastructure Constraints
 - **Docker Required**: YES (Multi-stage builds)
-- **Orchestration**: Docker Compose (Local/Dev profiles)
-- **CI/CD Pipeline**: GitHub Actions (Pending)
 - **Environment**: Containerized architecture exclusively.
 
 ## 🔒 Architectural Guardrails
 - **Pattern**: Monorepo split (/api, /web, /infra).
 - **Security**: JWT & Spring Security 6.x (RBAC).
-- **Communication**: REST + WebSockets (STOMP).
-- **Forbidden**: No inline CSS, No direct JDBC (JPA only), No un-containerized DB access.
 
 ## 🚦 Compliance Check
 AI Agent is forbidden from proposing changes that bypass Docker (e.g., local `java -jar`) or use styling outside of Tailwind 4. Violations trigger an immediate **INFRA_LOCK**.

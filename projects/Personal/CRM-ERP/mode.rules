@@ -1,1 +1,29 @@
-🟡 MANUAL
+# 🛡️ Governance Locking System: CRM-ERP
+# Global Governance ID: GG-CRM-001
+
+## 🚦 Active Security Lock Level
+LOCK_LEVEL=1
+
+---
+
+### [LEVEL 0] 🟢 EXPERIMENTAL (Fully Unlocked)
+### [LEVEL 1] 🟡 DEVELOPMENT (Partial Lock - DEFAULT)
+### [LEVEL 2] 🔴 PRODUCTION-LOCKED (Total Restraint)
+
+---
+
+## 🚦 Governance Profile: 🧩 Standard
+
+| Skill / Command | Authorized | Behavior |
+| :--- | :---: | :--- |
+| `/check-in` | ✅ | Always Allowed |
+| `/init-project` | ✅ | Always Allowed |
+| `/project-status` | ✅ | Always Allowed |
+| `/secure-push` | ✅ | Always Allowed |
+
+---
+
+## 🔒 Specific Sub-Locks (Overrides)
+ARCHITECTURE_MODIFICATION=LOCKED
+DATABASE_SCHEMA_MODIFICATION=LOCKED
+DEPENDENCY_INSTALLATION=LOCKED

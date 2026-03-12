@@ -15,15 +15,19 @@ Use semi-transparent backgrounds with high blur to create depth.
 - **Logic**: Sidebar/Dashboard cards must be filtered based on the `UserRole` enum.
 
 ## 2. Interaction & Feedback
-### Micro-Animations
-- **Hover**: Interactive elements should lift slightly: `transform: translateY(-3px)`.
-- **Transitions**: All hover states must have a smooth timing (e.g., `0.16s ease`).
+### Premium Motion (Framer Motion)
+Advanced animations that give an "app-like" feel:
+- **FadeIn with Offset**: Use custom easing `[0.21, 0.47, 0.32, 0.98]` with a 20px Y-offset for content entrance.
+- **Staggered Entry**: Lists and card grids MUST use `staggerChildren` (0.1s) to load items sequentially.
+- **Tactile Feedback**: Interactive elements (buttons/links) should use Spring-based scaling (`whileHover: {scale: 1.02}`, `whileTap: {scale: 0.98}`).
 
-### Profile Dropdown
-- **Enhanced Profile**: Instead of a simple link list, use a detailed card with:
-  - Avatar initials centered in a gradient circle.
-  - Role/Email labels in uppercase 10px font.
-  - **Inline Forms**: Settings like "Change Password" should occur within the dropdown UI to maintain context.
+### Intelligent Navigation
+- **Dynamic ID Breadcrumbs**: Navigation paths MUST resolve UUIDs to human-readable names via API (e.g., `Invoices / INV-001` instead of `Invoices / uuid`).
+- **Sidebar Context**: The sidebar should auto-collapse or highlight based on the deeply nested resolved path.
+
+### Context-Preserving Forms
+- **Expandable Create Panel**: For high-density data pages, implement an accordion-style creation panel directly above the table. This preserves filter/scroll context compared to navigation or modals.
+- **Profile Dropdown**: Settings like "Change Password" should occur within the dropdown UI to maintain context.
 
 ## 3. Data Presentation
 ### Standardized Toolbars
@@ -53,3 +57,15 @@ Premium UX requires that the user's scroll position, filters, and modal states r
   - All `GET` requests should be wrapped in a `useSoftQuery` hook (15s default interval).
   - **Mutation**: After a `POST/PUT/DELETE`, call `mutate('/endpoint')` or `mutate((key) => key[0] === '/endpoint')` to trigger a background update.
 - **Forbidden**: `window.location.reload()`, `router.refresh()`, or `router.push()` to the same page for data updates is considered a "Logic Blocker".
+
+## 6. Session & Security Management
+### Clean State Persistence
+Enterprise applications must handle session volatility gracefully.
+- **Dual-Storage Token Logic**: 
+  - **Remember Me (True)**: Persistence in `localStorage`.
+  - **Remember Me (False)**: Persistence in `sessionStorage` (cleared on tab close).
+  - **The "Smart Token" Getter**: The API intercetor must check both storages to ensure the session is active regardless of persistence choice.
+- **Silent Refresh Tokens**:
+  - Implement 401 interceptors that attempt to call `/auth/refresh` before forcing a logout.
+  - **Atomic Logout**: The `clearSession()` utility MUST clear both `localStorage` and `sessionStorage` to prevent "ghost sessions" from previous logins.
+- **Loading State Integrity**: Use persistent `isLoading` flags during auth checks in `AppShell` to prevent "Login Flash" (briefly seeing login page before redirect).

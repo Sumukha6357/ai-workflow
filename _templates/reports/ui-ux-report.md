@@ -33,6 +33,8 @@
 | **Skeleton Loaders** | [Missing/Active] | [0]% | [P2] |
 | **Soft Refresh Logic**| [Missing/Active] | [0]% | [P1] |
 | **Form Validation** | [Basic/Enriched] | [0]% | [P2] |
+| **Token Refresh** | [Missing/Active] | [0]% | [P1] |
+| **Session Persistence**| [Local/Session] | [0]% | [P1] |
 
 ---
 
