@@ -2,22 +2,26 @@
 
 Document which AI Slash Commands are authorized for this project.
 
-## 🚦 Governance Profile: 🏢 Enterprise
+## 🚦 Governance Profile: 🧩 Custom
 
 | Skill / Command | Authorized | Behavior |
 | :--- | :---: | :--- |
 | `/check-in` | ✅ | Always Allowed |
 | `/init-project` | ✅ | Always Allowed |
-| `/secure-push` | ✅ | Always Allowed |
-| `/enforce-structure` | ✅ | Always Allowed |
-| `/standardize-docker` | ✅ | Always Allowed |
-| `/standardize-docs` | ✅ | Always Allowed |
-| `/setup-monitoring` | ✅ | Always Allowed |
-| `/setup-cicd` | ✅ | Always Allowed |
-| `/verify-build` | ✅ | Always Allowed |
-| `/generate-tests` | ✅ | Always Allowed |
-| `/lint-and-heal` | ✅ | Always Allowed |
-| `/project-status` | ✅ | Always Allowed |
+| `/project-status` | ❌ | Restricted |
+| `/project-enhancements` | ❌ | Restricted |
+| `/logic-enhancements` | ❌ | Restricted |
+| `/secure-push` | ❌ | Restricted |
+| `/enforce-structure` | ❌ | Restricted |
+| `/standardize-docker` | ❌ | Restricted |
+| `/standardize-docs` | ❌ | Restricted |
+| `/setup-monitoring` | ❌ | Restricted |
+| `/setup-cicd` | ❌ | Restricted |
+| `/verify-build` | ❌ | Restricted |
+| `/generate-tests` | ❌ | Restricted |
+| `/premium-ux-audit` | ❌ | Restricted |
+| `/sync-hub` | ❌ | Restricted |
+| `/lint-and-heal` | ❌ | Restricted |
 
 ---
 

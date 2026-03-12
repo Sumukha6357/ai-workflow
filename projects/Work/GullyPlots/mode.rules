@@ -21,22 +21,26 @@ LOCK_LEVEL=0
 # Pre-Flight Approval MANDATORY: You MUST propose your exact plan in the chat (listing what files will be changed, like `docker-compose.yml` or `pom.xml`) and explicitly wait for the user to say "Go ahead" or "Proceed" BEFORE you write the code or modify the files. The user must be able to verify your approach before you execute.
 # Explicit Instruction Override: If the user requests a feature that logically requires infrastructure/architecture changes (e.g., adding a Redis service, a new dependency, or a database table), the agent IS allowed to modify `docker-compose.yml`, `pom.xml`, etc., *only* to implement that explicit request, BUT ONLY AFTER receiving the Pre-Flight Approval mentioned above.
 
-## 🚦 Governance Profile: 🏢 Enterprise
+## 🚦 Governance Profile: 🧩 Custom
 
 | Skill / Command | Authorized | Behavior |
 | :--- | :---: | :--- |
 | `/check-in` | ✅ | Always Allowed |
 | `/init-project` | ✅ | Always Allowed |
-| `/secure-push` | ✅ | Always Allowed |
-| `/enforce-structure` | ✅ | Always Allowed |
-| `/standardize-docker` | ✅ | Always Allowed |
-| `/standardize-docs` | ✅ | Always Allowed |
-| `/setup-monitoring` | ✅ | Always Allowed |
-| `/setup-cicd` | ✅ | Always Allowed |
-| `/verify-build` | ✅ | Always Allowed |
-| `/generate-tests` | ✅ | Always Allowed |
-| `/lint-and-heal` | ✅ | Always Allowed |
-| `/project-status` | ✅ | Always Allowed |
+| `/project-status` | ❌ | Restricted |
+| `/project-enhancements` | ❌ | Restricted |
+| `/logic-enhancements` | ❌ | Restricted |
+| `/secure-push` | ❌ | Restricted |
+| `/enforce-structure` | ❌ | Restricted |
+| `/standardize-docker` | ❌ | Restricted |
+| `/standardize-docs` | ❌ | Restricted |
+| `/setup-monitoring` | ❌ | Restricted |
+| `/setup-cicd` | ❌ | Restricted |
+| `/verify-build` | ❌ | Restricted |
+| `/generate-tests` | ❌ | Restricted |
+| `/premium-ux-audit` | ❌ | Restricted |
+| `/sync-hub` | ❌ | Restricted |
+| `/lint-and-heal` | ❌ | Restricted |
 
 ---
 

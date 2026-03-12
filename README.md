@@ -11,12 +11,13 @@ This repository acts as the **single source of truth** for how AI agents operate
 ```
 ai-governance/
 ├── MASTER_PROTOCOL.md       # Core rules and operating modes for all AI agents
-├── global-workflows/        # Reusable slash-command workflows (push, lint, test, etc.)
-├── _templates/              # Standardized project templates (docs, infra, testing, etc.)
-├── projects/                # Per-project governance configs (Work & Personal)
+├── link-governance.ps1      # 🚀 Global Sync & Onboarding Script
+├── global-workflows/        # Reusable slash-command workflows
+├── _templates/              # Standardized project templates
+├── projects/                # Per-project governance configs
 │   ├── Work/
 │   └── Personal/
-└── .agents/                 # Agent workflow definitions
+└── knowledge/               # Persistent AI Knowledge Base
 ```
 
 ## Key Features
